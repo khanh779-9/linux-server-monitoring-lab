@@ -1,0 +1,18 @@
+# Báo cáo tự sinh tại máy lab; cần làm sạch trước khi chủ động đưa lên Git.
+/reports/healthcheck-*.txt
+/reports/baseline-*.txt
+!/reports/baseline-example.txt
+
+# Archive/checksum từ các lần backup cục bộ.
+/backups/
+
+# File tạm của trình soạn thảo và hệ điều hành.
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Không commit bí mật hoặc biến môi trường.
+.env
+.env.*
+!.env.example
