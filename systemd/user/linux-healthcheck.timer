@@ -1,0 +1,11 @@
+[Unit]
+Description=Run Linux Healthcheck Every 30 Minutes
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=30min
+AccuracySec=1min
+Unit=linux-healthcheck.service
+
+[Install]
+WantedBy=timers.target

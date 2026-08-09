@@ -1,0 +1,10 @@
+[Unit]
+Description=Linux Server Monitoring Lab Healthcheck
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/Desktop/linux-server-monitoring-lab
+ExecStart=/usr/bin/bash %h/Desktop/linux-server-monitoring-lab/scripts/healthcheck.sh
+TimeoutStartSec=120
+# Mã 1 có nghĩa là healthcheck hoàn tất nhưng phát hiện WARNING.
+SuccessExitStatus=1
