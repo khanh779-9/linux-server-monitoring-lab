@@ -1,0 +1,31 @@
+LINUX SERVER & NETWORK MONITORING LAB - VÍ DỤ BASELINE
+Trạng thái: bản tóm tắt lịch sử đã làm sạch, dựa trên khảo sát ban đầu.
+Đây là ví dụ biên tập thủ công, không phải đầu ra thô hoặc số đo hiện tại.
+
+MÔI TRƯỜNG TẠI SNAPSHOT BAN ĐẦU
+- Hệ điều hành: Kali GNU/Linux Rolling 2026.3
+- Kernel: Linux 7.1.5+kali-amd64
+- Kiến trúc: x86-64
+- Ảo hóa: máy ảo VMware
+- RAM: tổng khoảng 4,1 GiB; khả dụng khoảng 3,0 GiB tại snapshot này
+- Swap: khoảng 4,1 GiB; chưa sử dụng tại snapshot này
+- Filesystem gốc: tổng khoảng 20 GiB, đã dùng khoảng 16 GiB, còn khoảng 3,7 GiB (xấp xỉ 81%)
+
+MẠNG
+- Interface Ethernet chính: UP
+- Default route: có (đã lược bỏ địa chỉ)
+- Ping IPv4 ngoài mạng: nhận 4/4 phản hồi trong lần kiểm tra được ghi lại
+- Ping tên miền: nhận 4/4 phản hồi trong lần kiểm tra được ghi lại
+- Tra cứu DNS google.com: thành công; đã lược bỏ địa chỉ trả về
+
+DỊCH VỤ VÀ SOCKET
+- `systemctl --failed`: không liệt kê unit lỗi trong snapshot được ghi nhận
+- Ảnh baseline sớm nhất không liệt kê socket TCP/UDP đang lắng nghe
+- Kiểm tra Nginx ở thời điểm sau cho thấy cổng HTTP 80 đang lắng nghe và access log có GET / trả HTTP 200
+
+BỐI CẢNH QUAN TRỌNG
+- Máy ảo sau đó được điều chỉnh phân vùng/tài nguyên. Một lần kiểm tra sau ghi nhận RAM 2 GiB, 4 CPU logic và filesystem gốc 24 GiB; còn khoảng 6,7 GiB trước khi cài Grafana.
+- `swapon --show` ở thời điểm sau hiển thị phân vùng swap đang hoạt động khoảng 2,5 GiB. Các giá trị sau này thuộc thời điểm khác và không được trộn lẫn với snapshot ban đầu.
+- Đây là quan sát theo thời điểm, không chứng minh tính sẵn sàng liên tục.
+- Filesystem vượt ngưỡng nên được điều tra; không xóa dữ liệu tự động chỉ dựa vào một tỷ lệ phần trăm.
+- Hostname, địa chỉ IP, gateway, MAC, machine ID, boot ID và các mã nhận diện thô đã được lược bỏ.
