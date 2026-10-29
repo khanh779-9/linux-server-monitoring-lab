@@ -2,7 +2,7 @@
 
 Phòng lab cá nhân để thực hành các nhiệm vụ nền tảng của **Linux System Administration, System Monitoring, IT Support và Network Operations/NOC**. Dự án được thực hiện trên Kali Linux chạy trong máy ảo VMware, sử dụng Bash, `systemd`, Nginx, Prometheus, Node Exporter và Grafana.
 
-> **Trạng thái:** các bài lab chính đã được thực hành trên máy ảo. Repository gồm tài liệu quy trình, báo cáo và 8 ảnh chụp từ chính VM, trong đó có ảnh dashboard Grafana và ảnh kiểm tra Prometheus. Ảnh systemd timer và backup/restore vẫn chưa có; danh sách cần bổ sung nằm trong [checklist bằng chứng](docs/evidence-checklist.md).
+> Các bài lab chính đã được thực hành trên máy ảo. Repository gồm tài liệu quy trình, báo cáo và 8 ảnh chụp từ chính VM, trong đó có ảnh dashboard Grafana và ảnh kiểm tra Prometheus. Ảnh systemd timer và backup/restore vẫn chưa có; danh sách cần bổ sung nằm trong [checklist bằng chứng](docs/evidence-checklist.md).
 
 ## Mục tiêu dự án
 
